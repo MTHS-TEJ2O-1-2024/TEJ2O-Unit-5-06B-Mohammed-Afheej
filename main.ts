@@ -1,24 +1,29 @@
 /* Copyright (c) 2020 MTHS All rights reserved
  *
- * Created by: Mr. Coxall
- * Created on: Sep 2020
- * This program ...
+ * Created by: Mohammed Afheej
+ * Created on: Oct 2024
+ * This program shows level brithness of light
 */
+// defining variables
+let distanceOfObject:number = 0
 
-let distanceToObject:number = 0
-
-//setup
+//show happy face (-__-)
 basic.showIcon(IconNames.Happy)
 
-// find sistance from sonar
-input.onButtonPressed(Button.A, function (){
+// calculating distance
+input.onButtonPressed(Button.A, function () {
+
+    // clearing screen
     basic.clearScreen()
-    distanceToObject = sonar.ping(
+    distanceOfObject = sonar.ping(
         DigitalPin.P1,
         DigitalPin.P2,
         PingUnit.Centimeters
     )
-    basic.showNumber(distanceToObject)
+
+    // showing the distance and happy face at the end
+    basic.showNumber(distanceOfObject)
+    pause(2000)
+    basic.clearScreen()
     basic.showIcon(IconNames.Happy)
 })
-
